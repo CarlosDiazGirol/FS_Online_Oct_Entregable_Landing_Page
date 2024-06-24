@@ -52,6 +52,8 @@ body {
   font-style: normal;
 }
 
+/* Cabecera */
+
 .publi {
   padding: 10px;
   text-align: center;
@@ -69,14 +71,27 @@ body {
   padding: 10px;
 }
 
+.ham {
+  width: 95px;
+  color: #009d95;
+  display: none;
+}
+
+.ham svg {
+  width: 24px;
+}
+
+.menu {
+  transition: all .5s ease;
+}
+
 .menu ul {
-  width: 575px;
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   color: #009d95;
-
 }
 .usuario {
   display: flex;
@@ -86,7 +101,25 @@ body {
   width: 25px;
 }
 
+.close {
+  display: none;
+}
+
+/* END CABCERA */
+
+
+.masthead {
+  position: relative;
+}
+
+.masthead img {
+  width: 100%;
+}
+
 .mastheadblur {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: start;
   flex-direction: column;
@@ -94,7 +127,6 @@ body {
   gap: 30px;
   width: 100%;
   height: 100%;
-  padding: 0 0 80px 20px;
   color: white;
   background-color: #00000085;
 }
@@ -116,11 +148,14 @@ body {
   padding: 10px 30px;
 }
 
-.masthead {
-  background-image: url("../img/masthead.png");
-  background-repeat: no-repeat;
-  height: 805px;
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 30px;
+  padding: 20px;
 }
+
 
 .bubble {
   position: fixed;
@@ -134,4 +169,43 @@ body {
   border-radius: 50%;
   background-color: #e89a9f;
 }
+
+@media (width <= 880px) {
+  .ham, .close {
+    cursor: pointer;
+  }
+  .ham {
+    display: block;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    left: -350px;
+    width: 350px;
+    height: 100vh;
+    background-color: white;
+    z-index: 999;
+  }
+  .menu ul {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .visible {
+    left: 0;
+  }
+  .close {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+  }
+}
+
+
+
+
+
+
+
+
 
